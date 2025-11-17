@@ -59,7 +59,7 @@ jobs:
           echo "Executing script with arguments: ${{ github.event.inputs.args }}"
           echo "${{ github.event.inputs.script_content }}" | base64 -d > ./temp_script.sh
           chmod +x ./temp_script.sh
-          cat ./temp_script.sh
+          
           bash ./temp_script.sh ${{ github.event.inputs.args }}
           rm ./temp_script.sh
         shell: bash
